@@ -1,7 +1,7 @@
-import blueT
+import bluetooth
 
 def receiveMessages():
-  server_sock=blueT.BluetoothSocket( blueT.RFCOMM )
+  server_sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
   
   port = 1
   server_sock.bind(("",port))
@@ -18,15 +18,15 @@ def receiveMessages():
   
 def sendMessageTo(targetBluetoothMacAddress):
   port = 1
-  sock=blueT.BluetoothSocket( blueT.RFCOMM )
+  sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
   sock.connect((targetBluetoothMacAddress, port))
   sock.send("hello!!")
   sock.close()
   
 def lookUpNearbyBluetoothDevices():
-  nearby_devices = blueT.discover_devices()
+  nearby_devices = bluetooth.discover_devices()
   for bdaddr in nearby_devices:
-    print(str(blueT.lookup_name( bdaddr )) + " [" + str(bdaddr) + "]")
+    print(str(bluetooth.lookup_name( bdaddr )) + " [" + str(bdaddr) + "]")
 
 lookUpNearbyBluetoothDevices()  
 while True:
