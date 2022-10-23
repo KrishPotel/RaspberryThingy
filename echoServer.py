@@ -16,5 +16,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             
                 data = conn.recv(1024)
                 if data == b"W":
-                    print("WOOOOOOOOOOOOOOOOOOOOO")
-                conn.sendall(data)
+                    print("W")
+                if data == b"D":
+                    print("D")
+                if data == b"S":
+                    print("S")
+                if data == b"A":
+                    print("A")
+                    
