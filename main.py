@@ -3,7 +3,6 @@ from ast import If
 import RPi.GPIO as GPIO
 import time
 import socket
-import echoServer
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
