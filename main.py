@@ -46,5 +46,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
 
 
-GPIO.output(5,GPIO.LOW)
-GPIO.output(6, GPIO.LOW)
+# GPIO.output(5,GPIO.LOW)
+# GPIO.output(6, GPIO.LOW)
