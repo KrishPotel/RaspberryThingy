@@ -24,22 +24,21 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     with conn:
         print(f"Connected by {addr}")
         while True:
-            while True:
-            
-                data = conn.recv(1024)
-                if data == b"W":
-                    print("W")
-                    GPIO.output(5, GPIO.HIGH)
-                    GPIO.output(6, GPIO.LOW)
-                if data == b"D":
-                    print("D")
-                if data == b"S":
-                    print("S")
-                if data == b"A":
-                    print("A")
-                if data == b"stop":
-                    GPIO.output(5, GPIO.LOW)
-                    GPIO.output(6, GPIO.LOW)
+        
+            data = conn.recv(1024)
+            if data == b"W":
+                print("W")
+                GPIO.output(5, GPIO.HIGH)
+                GPIO.output(6, GPIO.LOW)
+            if data == b"D":
+                print("D")
+            if data == b"S":
+                print("S")
+            if data == b"A":
+                print("A")
+            if data == b"stop":
+                GPIO.output(5, GPIO.LOW)
+                GPIO.output(6, GPIO.LOW)
 
 
 
