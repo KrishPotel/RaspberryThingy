@@ -29,6 +29,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             
                 data = conn.recv(1024)
                 if data == b"W":
+                    print("W")
                     GPIO.output(5, GPIO.HIGH)
                     GPIO.output(6, GPIO.LOW)
                 if data == b"D":
