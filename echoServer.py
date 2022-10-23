@@ -13,7 +13,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(f"Connected by {addr}")
         while True:
             while True:
+            
+                data = conn.recv(1024)
                 if data == b"W":
                     print("WOOOOOOOOOOOOOOOOOOOOO")
-                data = conn.recv(1024)
                 conn.sendall(data)
