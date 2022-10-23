@@ -1,9 +1,13 @@
 
 from ast import If
+from operator import truediv
+from re import T
+from xmlrpc.client import TRANSPORT_ERROR
 import RPi.GPIO as GPIO
 import time
 import socket
 
+t = False
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
@@ -24,10 +28,15 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     with conn:
         print(f"Connected by {addr}")
         while True:
+
+            if t == True:
+                GPIO.output(5, GPIO.HIGH)
+                GPIO.output(6, GPIO.LOW)
         
             data = conn.recv(1024)
             if data == b"W":
                 print("W")
+                t = True
                 GPIO.output(5, GPIO.HIGH)
                 GPIO.output(6, GPIO.LOW)
             if data == b"D":
