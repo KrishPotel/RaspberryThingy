@@ -12,3 +12,5 @@ GPIO.setup(20, GPIO.OUT)
 
 GPIO.output(5, GPIO.HIGH)
 GPIO.output(6, GPIO.LOW)
+
+print("QQ")
