@@ -18,6 +18,9 @@ GPIO.setup(6,GPIO.OUT)
 GPIO.setup(21, GPIO.OUT)
 GPIO.setup(20, GPIO.OUT)
 
+GPIO.output(5, GPIO.HIGH)
+GPIO.output(6, GPIO.LOW)
+
 HOST = "192.168.68.163"  # Standard loopback interface address (localhost)
 PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
 
