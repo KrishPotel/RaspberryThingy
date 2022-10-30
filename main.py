@@ -32,22 +32,22 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             if t == True:
                 GPIO.output(5, GPIO.HIGH)
                 GPIO.output(6, GPIO.LOW)
-            else:
-                GPIO.output(5, GPIO.LOW)
-                GPIO.output(6, GPIO.LOW)
+            # else:
+            #     GPIO.output(5, GPIO.LOW)
+            #     GPIO.output(6, GPIO.LOW)
             data = conn.recv(1024)
             if data == b"W":
                 print("W")
                 t = True
                 GPIO.output(5, GPIO.HIGH)
                 GPIO.output(6, GPIO.LOW)
-            if data == b"D":
+            elif data == b"D":
                 print("D")
-            if data == b"S":
+            elif data == b"S":
                 print("S")
-            if data == b"A":
+            elif data == b"A":
                 print("A")
-            if data == b"stop":
+            elif data == b"stop":
                 t = False
                 GPIO.output(5, GPIO.LOW)
                 GPIO.output(6, GPIO.LOW)
