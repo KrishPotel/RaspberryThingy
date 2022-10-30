@@ -32,6 +32,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             if t == True:
                 GPIO.output(5, GPIO.HIGH)
                 GPIO.output(6, GPIO.LOW)
+                GPIO.output(20, GPIO.HIGH)
+                GPIO.output(21, GPIO.LOW)
             # else:
             #     GPIO.output(5, GPIO.LOW)
             #     GPIO.output(6, GPIO.LOW)
